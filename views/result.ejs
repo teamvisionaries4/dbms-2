@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,800&family=Nunito:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/result.css">
+
+</head>
+
+<body>
+    <!-- <video id="background-video" autoplay loop muted plays-inline class="background-clip">
+        <source src="/images/result.mp4" type="video/mp4">
+      </video> -->
+    <!-- <img src="images/bg1.jpg" alt="" id="background-video"> -->
+    <img src="https://wallpaperaccess.com/full/1101285.jpg" id="background-video" alt="">
+
+    <header>
+        <a href="#" id="logo"><img src="/images/logo.jpg" alt="logo"
+                style="width: 50px; height: 50px; margin-right: 20px;">PlanYT.</a>
+        <nav class="navigation">
+            <div>
+
+                <form action="searc" method="post">
+                <button class="fav" type="submit" name="jay" value="<%=hat1%>">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span> <img src="images/magnifying-glass.png" alt="" style="width: 35px; height:35px;"
+                        title="Profile">
+                </button>
+            </form>
+            </div>
+        </nav>
+    </header>
+
+
+    
+    <%array.forEach(place=>{%>
+            <% if(place.name===name2){%>
+                <div class="place" data-aos="zoom-out-up">
+                    <div class="left" style="width: 50%;">
+                        <div class="name1">
+                            <img src="images/info.png" alt="" style="width: 35px; height: 35px;" id="note"> <span id="name1"><%=array2%></span>
+                        </div>
+                        <div class="name">
+                            <%=place.name%>
+                        </div>
+                        <div class="description">
+                            <%=place.description%>
+                        </div>
+                        <div class="timings">
+                            <% if (place.timings==='' ) { %>
+    
+                                Timings : Open 24 Hours
+    
+                                <% } if(place.timings===undefined){%>
+    
+                                    sorry,no results were found for your search.
+    
+                                    <%}else { %>
+    
+    
+                                        Timings : <%=place.timings%>
+    
+                                            <% } %>
+                        </div>
+    
+                        <div class="maps">
+                            <a href="<%=place.location%>">
+                                Directions
+                            </a>
+                        </div>
+    
+    
+                        <form action="result" method="post">
+                            <input type="text" value="<%=place.name%>" name="place1" style="display:none">
+                            <input type="text" value="<%=hat1%>" name="pat" style="display:none">
+                            <button onclick="func()" type="submit" name="car" value="add">
+                                <img id="bt" title="Add to Favourites" src="images/add-to-favorites.png"
+                                    style="width: 25px; height:25px;">
+                            </button>
+                        </form>
+                    </div>
+                     <span style="display:none">hello guys</span>
+                    <div class="right" style="width: 50%;">
+                        <img src="<%=place.img%>" alt="">
+                    </div>
+                </div>
+    
+                <%}else{%>
+    
+                    <div class="place" data-aos="zoom-out-up">
+                        <div class="left" style="width: 50%;">
+
+                            <div class="name">
+                                <%=place.name%>
+                            </div>
+                            <div class="description">
+                                <%=place.description%>
+                            </div>
+                            <div class="timings">
+                                <% if (place.timings==='' ) { %>
+    
+                                    Timings : Open 24 Hours
+    
+                                    <% } if(place.timings===undefined){%>
+    
+                                        sorry,no results were found for your search.
+    
+                                        <%}else { %>
+    
+    
+                                            Timings : <%=place.timings%>
+    
+                                                <% } %>
+                            </div>
+    
+                            <div class="maps">
+                                <a href="<%=place.location%>">
+                                    Directions
+                                </a>
+                            </div>
+    
+    
+                            <form action="result" method="post">
+                                <input type="text" value="<%=place.name%>" name="place1" style="display:none">
+                                <input type="text" value="<%=hat1%>" name="pat" style="display:none">
+                                <button onclick="func()" type="submit" name="car" value="add">
+                                    <img id="bt" title="Add to Favourites" src="images/add-to-favorites.png"
+                                        style="width: 25px; height:25px;">
+                                </button>
+                            </form>
+                        </div>
+    
+                        <div class="right" style="width: 50%;">
+                            <img src="<%=place.img%>" alt="">
+                        </div>
+                    </div>
+                    <% }%>
+
+        
+        
+                    <%})%>
+
+                        <div class="footer">
+                            <div class="c1">
+                                <div class="p1">
+                                    <img class="brand" src="/images/logo.jpg" alt="">
+                                </div>
+                                <div class="p2">
+                                    Visionaries
+                                </div>
+                            </div>
+                            <div class="c2">Designed and built with all the love in the world by the Visionaries team.
+                            </div>
+
+                            <div class="contact">
+                                <h5>CONTACT</h5>
+                                <h6>OFFICE:</h6>
+                                <img src="/images/call.png" alt="call" style="width: 15px; height: 15px;">
+                                +91-6304535654|<img src="/images/email.png" alt="mail"
+                                    style="width: 15px; height: 15px;"> office@iiitdm.ac.in
+                                <br>
+                                <a><img src="/images/facebook.png" alt="fb" style="width: 35px; height: 35px;"></a>
+                                <a><img src="/images/instagram.png" alt="insta" style="width: 35px; height: 35px;"></a>
+                                <a><img src="/images/linkedin.png" alt="linkedin"
+                                        style="width: 35px; height: 35px;"></a>
+                            </div>
+
+                            <div class="c3">
+                                <a class="gotopbtn" href="#"> <img src="images/up-arrow.png"
+                                        style="width: 60px; height:60px;"></a>
+                            </div>
+
+                        </div>
+
+                        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+                        <script>
+                            AOS.init();
+
+                        </script>
+</body>
+
+</html>

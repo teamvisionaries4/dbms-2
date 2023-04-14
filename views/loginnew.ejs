@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/loginnew.css">
+</head>
+
+<body>
+  <header>
+    <h2 class="logo">PlanYT.</h2>
+    
+  </header>
+  <div class="wrapper">
+
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form action="/register" method="post">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required name="email">
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+            <ion-icon name="lock-closed"></ion-icon>
+          </span>
+          <input type="password" required name="password">
+          <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+          <label></label>
+          <a href="#">Forgot Password</a>
+        </div>
+        <button type="submit" class="btn" name="reg" value="logi">Login</button>
+        <div class="login-register">
+          <p>
+            Don't have an account?
+            <a href="#" class="register-link">Register</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-box register">
+      <h2>Registration</h2>
+      <form action="/register" method="post">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" required  name="username">
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required name="email">
+          <label>Email</label>
+        </div>
+        <label>\</label>
+        <div class="input-box">
+          <span class="icon">
+            <ion-icon name="lock-closed"></ion-icon>
+          </span>
+          <input type="password" required name="password">
+          <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox">I agree to terms & conditions</label>
+        </div>
+        <button type="submit" class="btn" name="reg" value="regist">Register</button>
+        <div class="login-register">
+          <p>
+            Already have an account?
+            <a href="#" class="login-link">Login</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src='owasp-password-strength-test.js'></script>
+  <script src="/javascript/js.js"></script>
+  <<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/loginnew.css">
+</head>
+
+<body>
+  <header>
+    <h2 class="logo">PlanYT.</h2>
+    
+  </header>
+  <div class="wrapper">
+
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form  action="register" method="post">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required name="email">
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon">
+            <ion-icon name="lock-closed"></ion-icon>
+          </span>
+          <input type="password" required name="password">
+          <label>Password</label>
+        </div>
+        <div class="remember-forgot">
+          <label><%=para%></label>
+        </div>
+        <button type="submit" class="btn" name="reg" value="logi">Login</button>
+        <div class="login-register">
+          <p>
+            Don't have an account?
+            <a href="regist" class="register-link">Register</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script src="/javascript/js.js"></script>
+  <<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

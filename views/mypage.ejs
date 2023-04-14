@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="shortcut icon" type="x-icon" href="mini.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,800&family=Nunito:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/mypage.css">
+
+</head>
+
+<body>
+    <img src="images/bg.jpg" alt="" id="background-video">
+    <header>
+        <a href="#" id="logo"><img src="/images/logo.jpg" alt="logo"
+                style="width: 50px; height: 50px; margin-right: 20px;">PlanYT.</a>
+        <nav class="navigation">
+            <div>
+                
+                <form action="sear" method="post">
+                    <button style="display:none" name="jay1" value="<%=array.username%>"></button>
+                    <button class="fav" type="submit" name="jay" value="<%=array.email%>" >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> <img src="images/magnifying-glass.png" alt="" style="width: 35px; height:35px;"
+                            title="Profile">
+                    </button>
+                </form>
+                
+            </div>
+
+            <div>
+                <form action="logout" method="post">
+                    <button class="fav" type="submit">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> <img src="images/logout.png" alt="" style="width: 35px; height:35px;"
+                            title="Logout">
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="profile">
+        <div class="left" style="width: 40%;">
+            <div class="userimg">
+                <img src=" images/profile.png" alt="">
+            </div>
+            <div class="one">
+                <h3>Hello! <span class="name">
+                        <%=array.username%>
+                    </span>
+                </h3>
+            </div>
+        </div>
+        <div class="right" style="width: 60%;">
+            <div class="two">
+                <form action="changes" method="post">
+                    <div class="two1">
+                        <label for="user"><b>UserName:</b></label>
+                        <input id="user" type="text" placeholder="username" name='pranav' value="<%=array.username%>">
+                        <input id="mail1" type="text" name="sai1" value="<%=array.username%>" style="display:none"
+                            readonly>
+                    </div>
+                    <br>
+                    <div class="two2">
+                        <label for="mail" id="maillabel"><b>Emailid:</b></label>
+                        <input id="mail" type="text" placeholder="username" name="sai" value="<%=array.email%>"
+                            readonly>
+                        <input id="mail1" type="text" name="sai1" value="<%=array.email%>" style="display:none"
+                            readonly>
+
+                    </div>
+                    <br>
+
+                    <button id="btn" type="submit">
+                        save changes
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h2>My Favourites</h2>
+
+    <div class="slider-container">
+        <div class="left-slide">
+            <%array1.forEach(place=>{%>
+                <div style="background-color: #FD3555">
+                    <div class="name1">
+                        <%=place.name%>
+                    </div>
+                    <div class="description1">
+                        <%=place.description%>
+                    </div>
+                    <div class="timings1">
+                        <%=place.timings%>
+                    </div>
+                    <div class="maps1">
+                        <a href=<%=place.location%>>Directions</a>
+                    </div>
+
+                    <form action="remove" method="post">
+                        <input type="text" name="kula" value="<%=place.name%>" style="display:none">
+                        <input type="text" name="kul" value="<%=array.email%>" style="display:none">
+    
+                        <button type="submit" id="delete">
+                            <img src="images/delete (1).png" alt="" style="width: 35px; height:35px;"
+                            title="Remove from Favorites">
+                        </button>
+                    </form>
+                </div>
+                <% })%>
+        </div>
+
+        <div class="right-slide">
+            <%array1.slice().reverse().forEach(place=>{%>
+                <div>
+                    <img src=<%=place.image%> alt="">
+                </div>
+                <% })%>
+        </div>
+
+        <!-- <div style="background-color: #2A86BA">
+                <h1>Bluuue Sky</h1>
+                <p>with it's mountains</p>
+            </div>
+            <div style="background-color: #252E33">
+                <h1>Lonely castle</h1>
+                <p>in the wilderness</p>
+            </div>
+            <div style="background-color: #FFB866">
+                <h1>Flying eagle</h1>
+                <p>in the sunset</p>
+            </div> -->
+
+        <!-- <div class="right-slide">
+                    <div
+                        style="background-image: url('https://images.unsplash.com/photo-1508768787810-6adc1f613514?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e27f6661df21ed17ab5355b28af8df4e&auto=format&fit=crop&w=1350&q=80')">
+                    </div>
+                </div> -->
+
+        <div class="action-buttons">
+            <button class="down-button" id="btn">
+                <img src="images/down-arrow.png" alt="down" style="width: 20px; height: 20px;">
+            </button>
+            <button class="up-button" id="btn">
+                <img src="images/up-arrow1.png" alt="up" style="width: 20px; height: 20px;">
+            </button>
+        </div>
+    </div>
+
+    <!-- <script src="/javascript/mypage.js"></script> -->
+
+    <div class="footer">
+        <div class="c1">
+            <div class="p1">
+                <img class="brand" src="/images/logo.jpg" alt="">
+            </div>
+            <div class="p2">
+                Visionaries
+            </div>
+        </div>
+        <div class="c2">Designed and built with all the love in the world by the Visionaries team. </div>
+
+        <div class="contact">
+            <h5>CONTACT</h5>
+            <h6>OFFICE:</h6>
+            <img src="/images/call.png" alt="call" style="width: 15px; height: 15px;"> +91-6304535654|<img
+                src="/images/email.png" alt="mail" style="width: 15px; height: 15px;"> office@iiitdm.ac.in
+            <br>
+            <a><img src="/images/facebook.png" alt="fb" style="width: 35px; height: 35px;"></a> <a><img
+                    src="/images/instagram.png" alt="insta" style="width: 35px; height: 35px;"></a> <a><img
+                    src="/images/linkedin.png" alt="linkedin" style="width: 35px; height: 35px;"></a>
+        </div>
+
+        <div class="c3">
+            <a class="gotopbtn" href="#"> <img src="images/up-arrow.png" style="width: 60px; height:60px;"></a>
+        </div>
+
+    </div>
+
+    <script>
+
+
+        const sliderContainer = document.querySelector('.slider-container');
+        const slideRight = document.querySelector('.right-slide');
+        const slideLeft = document.querySelector('.left-slide');
+        const upButton = document.querySelector('.up-button');
+        const downButton = document.querySelector('.down-button');
+        const slidesLength = slideRight.querySelectorAll('div').length;
+
+        let activeSlideIndex = 0;
+
+        slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`;
+
+        upButton.addEventListener('click', () => changeSlide('up'));
+        downButton.addEventListener('click', () => changeSlide('down'));
+
+        const changeSlide = (direction) => {
+            const sliderHeight = sliderContainer.clientHeight;
+            if (direction === 'up') {
+                activeSlideIndex++;
+                if (activeSlideIndex > slidesLength - 1) {
+                    activeSlideIndex = 0;
+                }
+            } else if (direction === 'down') {
+                activeSlideIndex--;
+                if (activeSlideIndex < 0) {
+                    activeSlideIndex = slidesLength - 1;
+                }
+            }
+            slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
+            slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`;
+        }
+
+
+    </script>
+</body>
+
+</html>
