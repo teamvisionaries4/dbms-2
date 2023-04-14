@@ -1,9 +1,39 @@
-.otpverify {
-    display: none;
+
+
+  body {
+    text-align: center;
+    background: #d8e2dc;
 }
 
-.btn {
-    display: inline-block;
+.main {
+    margin-top: 250px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+}
+
+input {
+    padding: 0.6rem;
+}
+
+/* .btn {
+    padding: 0.5rem 0.8rem;
+    background-color: violet;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+} */
+
+.otpverify {
+    display: none;
 }
 
 .primary-button {
