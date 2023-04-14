@@ -21,9 +21,9 @@ app.listen(3000, () => {
   console.log("serving");
 })
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Kuladeep@12",
+  host: "kuladeep.c5rlvnugwvna.ap-south-1.rds.amazonaws.com",
+  user: "admin",
+  password: "Visionaries4",
   database: "dbms",
 });
 
