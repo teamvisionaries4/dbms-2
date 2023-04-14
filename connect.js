@@ -24,7 +24,7 @@ var con = mysql.createConnection({
   host: "kuladeep.c5rlvnugwvna.ap-south-1.rds.amazonaws.com",
   user: "admin",
   password: "Visionaries4",
-  database: "dbms",
+  database: "dbms"
 });
 
 con.connect(function (err) {
