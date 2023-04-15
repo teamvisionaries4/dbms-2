@@ -40,7 +40,7 @@ function sendOTP(){
     Email.send({
         SecureToken : "fbaf3a2b-21d0-45c9-b719-0d54f9292ab0",
         To : email.value,
-        From : "teamvisionaries4@gmail.com",
+        From : "kuladeepguptha@gmail.com",
         Subject : "OTP Email Verification from PlanYT",
         Body : emailbody
     }).then(
